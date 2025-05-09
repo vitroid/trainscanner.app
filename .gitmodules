@@ -1,0 +1,3 @@
+[submodule "TrainScanner"]
+	path = TrainScanner
+	url = https://github.com/vitroid/TrainScanner.git
