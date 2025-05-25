@@ -1,1 +1,4 @@
 poetry.lock
+cx_freeze
+py2app
+
