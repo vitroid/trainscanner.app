@@ -15,8 +15,8 @@ VERSION := $(shell poetry show trainscanner | awk '/version/ {print $$3}')
 APP_NAME := trainscanner-$(VERSION)-arm64.app
 ZIP_NAME := $(APP_NAME).zip
 
-zipapp:
+$(ZIP_NAME):
 	cd dist && zip -r ../$(ZIP_NAME) $(APP_NAME)
 
-release: zipapp
+release: $(ZIP_NAME)
 	gh release create v$(VERSION) $(ZIP_NAME) --title "TrainScanner v$(VERSION) (Apple Silicon)" --notes "Apple Silicon (arm64) 用 .app バンドルです。" 
